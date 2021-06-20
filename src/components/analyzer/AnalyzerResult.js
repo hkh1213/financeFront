@@ -146,7 +146,7 @@ function AnalyzerResult(props) {
             title       : corp_detail.corp_name + ' 보고서정보',
             tables      : [{
                 data    : reportNos.map(reportNo => {
-                    return <a href={`${reportUri}${reportNo}`} target="_blank">{reportNo}</a>
+                    return <a href={`http://dart.fss.or.kr/dsaf001/main.do?rcpNo=${reportUri}${reportNo}`} target="_blank">{reportNo}</a>
                 })
             }]
         };

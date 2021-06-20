@@ -8,6 +8,7 @@ import Nav      from './components/nav/Nav'
 import Guide    from './components/guide/Guide'
 import Search   from './components/search/Search'
 import Analyzer from './components/analyzer/Analyzer'
+import TVChartContainer from './components/TVChartContainer/index'
 
 class App extends React.Component {
     render() {
@@ -19,6 +20,7 @@ class App extends React.Component {
                     </Grid>
                     <Grid item xs={8} md={9}>
                         <Route path="/"                     component={Guide} exact></Route>
+                        <Route path="/chart"                component={TVChartContainer} exact></Route>
                         <Route path="/guide"                component={Guide}></Route>
                         <Route path="/search"               component={Search}></Route>
                         <Route path="/analyze/:corpCode"    component={Analyzer}></Route>
