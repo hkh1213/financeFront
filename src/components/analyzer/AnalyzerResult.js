@@ -41,8 +41,9 @@ function AnalyzerResult(props) {
     let newsLink            = undefined;
 
     let isItems             = false;
+
     if (analyzing) {
-        reportUriMsg        = <Alert severity="warning">보고서정보 {resultingMessage}</Alert>;
+        reportUriMsg        = <Alert severity="warning">공시정보 {resultingMessage}</Alert>;
         corpDetailMsg       = <Alert severity="warning">재무제표 {resultingMessage}</Alert>;
         issueEvalDoneMsg    = <Alert severity="warning">관리종목 {resultingMessage}</Alert>;
         incomeEvalDoneMsg   = <Alert severity="warning">영업이익 {resultingMessage}</Alert>;
@@ -51,14 +52,14 @@ function AnalyzerResult(props) {
         const status = corpDetails.status;
 
         if (status === '') {
-            reportUriMsg        = <Alert severity="info">보고서정보 {shouldResultMessage}</Alert>;
+            reportUriMsg        = <Alert severity="info">공시정보 {shouldResultMessage}</Alert>;
             corpDetailMsg       = <Alert severity="info">재무제표 {shouldResultMessage}</Alert>;
             issueEvalDoneMsg    = <Alert severity="info">관리종목 {shouldResultMessage}</Alert>;
             incomeEvalDoneMsg   = <Alert severity="info">영업이익 {shouldResultMessage}</Alert>;
             newsLink             = <Alert severity="warning">뉴스 {resultingMessage}</Alert>;
         } else if (status === 200) {
             isItems             = true;
-            reportUriMsg        = <Alert severity="success">보고서정보 {successedMessage}</Alert>;
+            reportUriMsg        = <Alert severity="success">공시정보 {successedMessage}</Alert>;
             corpDetailMsg       = <Alert severity="success">재무제표 {successedMessage}</Alert>;
             newsLink             = <Alert severity="warning">뉴스 {resultingMessage}</Alert>;
             
@@ -74,7 +75,7 @@ function AnalyzerResult(props) {
                 incomeEvalDoneMsg = <Alert severity="error">영업이익 {failedMessage}</Alert>;
             }
         } else {
-            reportUriMsg        = <Alert severity="error">보고서정보 {failedMessage}</Alert>;
+            reportUriMsg        = <Alert severity="error">공시정보 {failedMessage}</Alert>;
             corpDetailMsg       = <Alert severity="error">재무제표 {failedMessage}</Alert>;
             issueEvalDoneMsg    = <Alert severity="error">관리종목 {failedMessage}</Alert>;
             incomeEvalDoneMsg   = <Alert severity="error">영업이익 {failedMessage}</Alert>;
@@ -157,14 +158,14 @@ function AnalyzerResult(props) {
         // news_links.push(news_links);
 
         /**
-         * 보고서정보
+         * 공시정보
          */
         const report_table_info = {
             labels      : thstrmDts,
-            title       : corp_detail.corp_name + ' 보고서정보',
+            title       : corp_detail.corp_name + ' 공시정보',
             tables      : [{
                 data    : reportNos.map(reportNo => {
-                    return <a href={`${reportUri}${reportNo}`} target="_blank">{reportNo}</a>
+                    return <a href={`${reportUri}20210430800706`} target="_blank">{reportNo}</a>
                 })
             }]
         };
