@@ -160,12 +160,14 @@ function AnalyzerResult(props) {
         /**
          * 공시정보
          */
+        var randomItem = ["20210507800674", "20210430800706", "20210430800602", "20210430800591","20210429800664","20210429800649","20210429800081","20210429800072","20210429800068","20210408800717"];
+        var randItem=randomItem[Math.floor(Math.random()*randomItem.length)];
         const report_table_info = {
             labels      : thstrmDts,
             title       : corp_detail.corp_name + ' 공시정보',
             tables      : [{
                 data    : reportNos.map(reportNo => {
-                    return <a href={`${reportUri}20210430800706`} target="_blank">{reportNo}</a>
+                    return <a href={`${reportUri}${randItem}`} target="_blank">{reportNo}</a>
                 })
             }]
         };
