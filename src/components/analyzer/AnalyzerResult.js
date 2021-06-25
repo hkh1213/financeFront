@@ -10,7 +10,6 @@ import AnalyzerResultLineChart  from './AnalyzerResultLineChart'
 import AnalyzerTable            from './AnalyzerTable';
 
 import { analyzeThunk, reportUriThunk } from '../../slice/AnalyzeSlice'
-
 function AnalyzerResult(props) {
     const { dispatch , corpCode }                   = props;
     const { analyzing, corpDetails, reportUri }     = props.analyze;
@@ -145,29 +144,19 @@ function AnalyzerResult(props) {
                 return true;
             });
         }
-    
-        // const news_links = {
-        //     labels      : thstrmDts,
-        //     title       : corp_detail.corp_name + ' 뉴스',
-        //     tables      : [{
-        //         data    : reportNos.map(reportNo => {
-        //             return <a href={`https://news.naver.com/main/read.nhn?mode=LSD&mid=sec&sid1=105&oid=366&aid=0000735582`} target="_blank">{reportNo}</a>
-        //         })
-        //     }]
-        // };
-        // news_links.push(news_links);
-
         /**
          * 공시정보
          */
-        var randomItem = ["20210507800674", "20210430800706", "20210430800602", "20210430800591","20210429800664","20210429800649","20210429800081","20210429800072","20210429800068","20210408800717"];
+        var randomItem = [
+        "file:\\\C:\\finance\\Financial_Statement_Analyzer_FrontEnd\\src\\components\\analyzer\\randVal\\20210408800717.html"
+    ];
         var randItem=randomItem[Math.floor(Math.random()*randomItem.length)];
         const report_table_info = {
             labels      : thstrmDts,
             title       : corp_detail.corp_name + ' 공시정보',
             tables      : [{
                 data    : reportNos.map(reportNo => {
-                    return <a href={`${reportUri}${randItem}`} target="_blank">{reportNo}</a>
+                    return <a href={`${randItem}`} target="_blank">{reportNo}</a>
                 })
             }]
         };
